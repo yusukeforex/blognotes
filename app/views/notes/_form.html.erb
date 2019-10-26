@@ -1,4 +1,5 @@
-<%= form_with(model: note, local: true) do |form| %>
+<%= form_with(model: note, local: true) do |f| %>
+  <%# Error messages for each %> 
   <% if note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -10,18 +11,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="btn btn-info">
-    <%= form.submit %>
-  </div>
+  <%# Form for creating notes %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, id: :note_title %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, id: :note_description %>
+  </p>
+  <p>
+    <%= f.submit class: "btn btn-info" %>
+  </p>
 <% end %>
