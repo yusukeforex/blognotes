@@ -14,7 +14,7 @@ class NotesTest < ApplicationSystemTestCase
     visit notes_url
     click_on "New Note"
 
-    fill_in "String", with: @note.string
+    fill_in "Description", with: @note.description
     fill_in "Title", with: @note.title
     click_on "Create Note"
 
@@ -26,7 +26,7 @@ class NotesTest < ApplicationSystemTestCase
     visit notes_url
     click_on "Edit", match: :first
 
-    fill_in "String", with: @note.string
+    fill_in "Description", with: @note.description
     fill_in "Title", with: @note.title
     click_on "Update Note"
 
