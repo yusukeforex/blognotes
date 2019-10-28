@@ -1,24 +1,9 @@
-# README
+firstly need to create all frames and then finally use bootstrap things to make it look better.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+would like to add
 
-Things you may want to cover:
+post notes system
+  with pictures, videos, can choose font systems like evernote.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+user login system
+  with password, reset password, send email to confirm the signup, forgot username, (all kinds of email system)
