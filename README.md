@@ -2,7 +2,7 @@ firstly need to create all frames and then finally use bootstrap things to make 
 
 would like to add
 
-post notes system
+post notes system(CRUD operations)
   with pictures, videos, can choose font systems like evernote.
 
 user login system
