@@ -1,0 +1,29 @@
+<%= render 'errors', user: @user %>
+
+<h2>Sign Up</h2>
+<%= form_with(model: @user, local: true) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :user_name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email, id: :user_email %>
+  </p>
+  <p>
+    <%= f.label :email_confirmation %>
+    <%= f.text_field :email_confirmation, id: :user_email_confirmation %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit class: "btn btn-info" %>
+  </p>
+<% end %>
+
