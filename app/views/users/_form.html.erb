@@ -13,6 +13,9 @@
     <%= f.text_field :email_confirmation, id: :user_email_confirmation %>
   </p>
   <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
     <%= f.submit class: "btn btn-info" %>
   </p>
 <% end %>

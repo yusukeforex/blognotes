@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create 
-    @user = User.new(user_params)
+    @user = User.create params.require(:user).permit(:name, :email, :email_confirmation, :password, :password_confirmation, :image)
     if @user.save
       flash[:notice] = "User was successfully create"
       redirect_to users_path
@@ -19,12 +19,15 @@ class UsersController < ApplicationController
   end
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.update params.require(:user).permit(:name, :email, :email_confirmation, :image)
       flash[:success] = "Has been updated successfully"
       redirect_to notes_path
     else
       render 'edit'
     end
+  end
+  def show 
+    @user = User.find(params[:id])
   end
 
   private 
