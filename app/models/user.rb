@@ -12,9 +12,9 @@ class User < ApplicationRecord
 
   validates :email_confirmation, presence: true
 
-  validates :password, presence: true, confirmation: true, length: { in: 8..16 }
+  validates :password, presence: true, on: :create, confirmation: true, length: { in: 8..16 }
 
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, on: :create
 
 
 
