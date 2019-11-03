@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :notes
   has_one_attached :image #should i delete this or not
-  before_save { self.email = email.downcase}
+  before_save { self.email = email.downcase }
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }, length: { in: 2..20 }
 

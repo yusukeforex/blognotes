@@ -24,17 +24,14 @@ class NotesController < ApplicationController
 
   # POST /notes
   # POST /notes.json
-  def create
+  def create #changed 
     @note = Note.new(note_params)
-
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
-        format.json { render :show, status: :created, location: @note }
-      else
-        format.html { render :new }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+    @note.user = User.first #temporary
+    if @note.save
+      flash[:success] = "Note was created"
+      redirect_to note_path(@note)
+    else 
+      render 'new'
     end
   end
 
