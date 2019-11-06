@@ -1,0 +1,16 @@
+<h2>Log in</h2>
+<%= form_with(scope: :session, local: true) do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off" %>
+  </p>
+  <p>
+    <%= f.submit "Log in", class: "btn btn-info" %>
+  </p>
+<% end %>
+
+<%= link_to 'sign up', signup_path %>

@@ -20,6 +20,5 @@ user login system
     resources :users, except: [:new]
 
 
-gotta make it each users info will be showd up in their own note's show pages
-like: note title, description, author and his/her image
-
+would like to show 'see all notes' in users show page link to notes show page that user have created
+show flash messages 
