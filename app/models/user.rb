@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :notes
+  has_many :notes, dependent: :destroy
   has_one_attached :image #should i delete this or not
   before_save { self.email = email.downcase }
 

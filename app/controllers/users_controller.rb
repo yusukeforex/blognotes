@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_admin, only: [:destroy]
   def new 
     @user = User.new
   end
   def create 
     @user = User.create params.require(:user).permit(:name, :email, :email_confirmation, :password, :password_confirmation, :image)
     if @user.save
-      flash[:notice] = "User was successfully create"
+      flash[:success] = "User was successfully create"
       redirect_to users_path
     else 
       render 'new'
@@ -34,12 +36,24 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "user was deleted"
-    redirect_to users_path
+    redirect_to login_path
   end
 
 
   private 
   def user_params
     params.require(:user).permit(:name, :email, :email_confirmation, :password, :password_confirmation)
+  end
+  def require_same_user
+    if current_user != @user and !current_user.admin?
+      flash[:danger] = "only edit or delete are allowed"
+      redirect_to login_path
+    end
+  end
+  def require_admin
+    if logged_in? and !current_user.admin?
+      flash[:danger] = "you are not admin user"
+      redirect_to login_path
+    end
   end
 end
