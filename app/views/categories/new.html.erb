@@ -1,0 +1,24 @@
+
+<%= form_with(model: @category, local: true) do |f| %>
+  <%# Error messages for each %> 
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this categories from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%# Form for creating notes %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :category_name %>
+  </p>
+  
+  <p>
+    <%= f.submit class: "btn btn-info" %>
+  </p>
+<% end %>
