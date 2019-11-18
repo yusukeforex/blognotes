@@ -24,9 +24,9 @@ class NotesController < ApplicationController
 
   # POST /notes
   # POST /notes.json
-  def create #changed 
+  def create  
     @note = Note.new(note_params)
-    @note.user = User.first #temporary
+    @note.user = current_user 
     if @note.save
       flash[:success] = "Note was created"
       redirect_to note_path(@note)

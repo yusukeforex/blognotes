@@ -36,4 +36,9 @@ categories page, all categories will be shown up and each of them have link_to
 category => category show page each categories.all 
 also edit pages for each of them, show, new
 
-also image upload function would be awesome,
+also image upload function would be better,
+
+<!-- notes controller create method should not be temporary !important  -->
+when you create note, category does not show up anymore
+
+profile image size limitation => might need to use javascript
