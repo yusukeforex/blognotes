@@ -1,17 +1,87 @@
-<h2>All Users</h2>
-<table>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'sessions/navbar' %>
 
+<div class="jumbotron jumbotron-fluid ">
+  <div class="container">
+    <h1 class="display-4 text-center">Blognote</h1>
+    <div class = "text-center">
+      <%= image_tag('woman-3190829_1280.jpg') %>
+    </div>
+    <p class="lead text-center">Just take notes as you write a blog.</p>
+  </div>
+</div>
 
+<div class = "container">
+<div class = "signuptext row">
 
-<%= link_to 'create new user', signup_path %>
-<%= render 'sessions/logout' %>
+  <div class = "registration form-inline col-sm-6">
+    <h3>Register</h3>
+    <div class = "signuptext-btn">
+      <%= link_to 'Sign Up', signup_path, class: 'btn btn-outline-light' %>
+    </div>
+  </div>
+
+    <div class = "loginform form-inline col-sm-6">
+      <h3 class>Log in</h3>
+      <div class = "loginform-btn">
+        <%= link_to 'Log in', login_path, class: 'btn btn-outline-info' %>
+      </div>
+    </div>
+  
+</div>
+</div>
+
+<div class = "body">
+  <div class = "container col-sm-12">
+    <h1>Welcome to Blognote</h1>
+    <p>Blognote, as you see, combined with <br>"Blog" and "Note", you can take notes as you blog.</p>
+    <p>Easy to share your notes. Even you skipped class, just login and see your classmate's note.</p>
+    <p>It's time to stop buying stationaries.
+    <br>Now save your money, it's free for anyone.</p>
+  </div>
+</div>
+
+<footer class="page-footer font-small unique-color-dark pt-4">
+  <div class="container text-center text-md-left mt-5">
+    <div class="row mt-3">
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <a href="#"><p>Blognote</p></a>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Product</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Blognote</a>
+        </p>
+      </div>
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase font-weight-bold">Useful link</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Help</a>
+        </p>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Japan</p>
+        <p>@example.com</p>
+        <p>+ 01 234 567 89</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <%= link_to 'Sign Up', signup_path, class: 'btn btn-outline-light' %>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-copyright text-left py-3">© 2019 Copyright:
+    <a href="#"> blognote.com</a>
+  </div>
+</footer>

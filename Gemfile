@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'image_processing', '~> 1.2'
+gem 'font-awesome-sass'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

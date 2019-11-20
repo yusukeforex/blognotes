@@ -42,3 +42,8 @@ also image upload function would be better,
 when you create note, category does not show up anymore
 
 profile image size limitation => might need to use javascript
+
+user show page, edit path goes to log in
+
+index.html.erb, needed 2 containers 
+also try bootstrap4 form style later on 

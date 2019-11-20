@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   #for categories
   resources :categories, except: [:destroy]
+
+  #root
+  root to:'users#index'
 end
