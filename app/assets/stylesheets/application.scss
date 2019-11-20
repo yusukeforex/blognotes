@@ -18,6 +18,7 @@
 body {
   background-color: rgba(0, 0, 0, 0.863);
   color: rgba(255, 255, 255, 0.781);
+  height: 100%;
 }
 
 
@@ -71,11 +72,28 @@ body {
   }
 }
 
-footer{
-  a{
-    border-style: none;
+// users new.html.erb signup form 
+.signup{
+  text-align: center;
+  display: inline-block;
+  margin-top: 60px;
+  .form-inline{
+    padding-bottom: 8px;
+  }
+  .imagefield{
+    margin: 30px 0;
+  }
+  .btn{ 
+    padding: 10px 120px;
+  }
+  .linktologin{
+    color: rgba(255, 255, 255, 0.671);
   }
 }
+
+
+
+
 
 
 

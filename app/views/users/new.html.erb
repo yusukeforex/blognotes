@@ -1,33 +1,42 @@
+<%= render 'sessions/navbar' %>
+
 <%= render 'errors', user: @user %>
 
-<h2>Sign Up</h2>
-<%= form_with(model: @user, local: true) do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name, id: :user_name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email, id: :user_email %>
-  </p>
-  <p>
-    <%= f.label :email_confirmation %>
-    <%= f.text_field :email_confirmation, id: :user_email_confirmation %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.submit class: "btn btn-info" %>
-  </p>
-<% end %>
+<div class = "container text-center">
+  <div class = "signup row">
+    <div class = "form col-sm-12">
+      <h2>Sign Up</h2>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <p>
+          <%= f.label :name, :class => 'form-inline' %>
+          <%= f.text_field :name, id: :user_name, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :email, :class => 'form-inline' %>
+          <%= f.text_field :email, id: :user_email, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :email_confirmation, :class => 'form-inline' %>
+          <%= f.text_field :email_confirmation, id: :user_email_confirmation, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :password, :class => 'form-inline' %>
+          <%= f.password_field :password, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :password_confirmation, :class => 'form-inline' %>
+          <%= f.password_field :password_confirmation, :class => 'form-control' %>
+        </p>
+        <p class = "imagefield">
+          <%= f.file_field :image %>
+        </p>
+        <p>
+          <%= f.submit class: "btn btn-outline-info" %>
+        </p>
+      <% end %>
 
-<%= link_to 'you have an account? Log in', login_path %>
+
+      <%= link_to 'you have an account? Log in now.', login_path, :class => 'linktologin' %>
+    </div>
+  </div>
+</div>
