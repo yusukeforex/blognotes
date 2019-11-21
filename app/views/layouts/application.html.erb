@@ -9,7 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <%= render 'sessions/navbar' %>
+    <%= render 'sessions/errors' %>
     <%= yield %>
+    <%= render 'sessions/footer' %>
   </body>
+
 </html>

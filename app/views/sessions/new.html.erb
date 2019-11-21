@@ -1,17 +1,23 @@
-<%= render 'sessions/navbar' %>
-<h2>Log in</h2>
-<%= form_with(scope: :session, local: true) do |f| %>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
-  </p>
-  <p>
-    <%= f.submit "Log in", class: "btn btn-info" %>
-  </p>
-<% end %>
-
-<%= link_to 'sign up', signup_path %>
+<div class = "container text-center">
+  <div class = "login row">
+    <div class = "form col-sm-12">
+      <h2>Log in</h2>
+      <%= form_with(scope: :session, local: true) do |f| %>
+        <p>
+          <%= f.label :email, :class => 'form-inline' %>
+          <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :password, :class => 'form-inline' %>
+          <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.submit "Log in", class: "btn btn-outline-info" %>
+        </p>
+      <% end %>
+        <p class = "create">
+          <%= link_to 'Create an account.', signup_path, :class => 'linktosignup' %>
+        </p>
+    </div>
+  </div>
+</div>

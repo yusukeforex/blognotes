@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   def create 
     @user = User.create params.require(:user).permit(:name, :email, :email_confirmation, :password, :password_confirmation, :image)
     if @user.save
-      flash[:success] = "User was successfully create"
-      redirect_to users_path
+      flash[:success] = "User was successfully created"
+      redirect_to login_path
     else 
       render 'new'
     end

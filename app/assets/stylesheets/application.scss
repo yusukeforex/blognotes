@@ -19,11 +19,13 @@ body {
   background-color: rgba(0, 0, 0, 0.863);
   color: rgba(255, 255, 255, 0.781);
   height: 100%;
+  padding-top: 60px; //to show alert msg
 }
 
 
 .jumbotron{
   background-color: black;
+  padding-top: 80px;
   h1{
     margin-bottom: 30px;
   }
@@ -34,6 +36,7 @@ body {
     object-fit: cover;
     display: block;
     width: 100%; height: 100%;
+
   }
 }
 
@@ -41,10 +44,10 @@ body {
   height: 90px;
   padding-bottom: 20px;
   .registration{
-    float: left;
+    text-align: center;
   }
   .loginform{
-    float: right;
+    text-align: center;
   }
   .signuptext-btn{
     padding-left: 20px;
@@ -72,11 +75,37 @@ body {
   }
 }
 
-// users new.html.erb signup form 
+// footer in sessions/_footer.html.erb file
+footer{
+  .coloroffooter{
+    padding-top: 10px;
+  }
+  a{
+    color: rgba(255, 255, 255, 0.521);
+  }
+  .contact{
+    color: rgba(255, 255, 255, 0.521);
+    padding-top: 10px;
+  }
+  .footer-copyright{
+    padding-left: 20px;
+  }
+  .register{
+    padding-top: 25px;
+  }
+  hr{
+    border: 1px solid white;
+  }
+  .horizontalline{
+    padding-top: 25px;
+  }
+}
+
+// signup form users new.html.erb
 .signup{
   text-align: center;
   display: inline-block;
-  margin-top: 60px;
+  margin-top: 70px;
   .form-inline{
     padding-bottom: 8px;
   }
@@ -85,12 +114,38 @@ body {
   }
   .btn{ 
     padding: 10px 120px;
+    margin: 30px 0;
+  }
+  .youhaveanaccount{
+    margin-bottom: 40px;
   }
   .linktologin{
     color: rgba(255, 255, 255, 0.671);
   }
 }
 
+// login form sessions new.html.erb
+.login{
+  text-align: center;
+  display: inline-block;
+  margin-top: 70px;
+  h2{
+    margin-bottom: 30px;
+  }
+  .form-inline{
+    padding-bottom: 12px;
+  }
+  .btn{
+    padding: 10px 120px;
+    margin: 30px 0;
+  }
+  .create{
+    margin-bottom: 40px;
+  }
+  .linktosignup{
+    color: rgba(255, 255, 255, 0.671);
+  }
+}
 
 
 
