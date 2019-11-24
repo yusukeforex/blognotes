@@ -16,5 +16,20 @@ class User < ApplicationRecord
 
   validates :password_confirmation, presence: true, on: :create
 
+  # validate :image_type
+
+
+  def image_type
+    if image.attached? && image.content_type.in?(%("image/jpeg image/png"))
+      errors.add(:image, 'error message')
+    elsif !image.attached?
+      errors.add(:image, 'error message')
+    end
+  end
+
+  # def profile_image
+  #   return self.variant(resize: '300x300').processed
+  # end
+
 
 end

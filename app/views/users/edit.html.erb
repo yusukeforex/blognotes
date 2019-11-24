@@ -1,16 +1,39 @@
-<h2>edit your user</h2>
-<%= form_with(model: @users, local: true) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this note from being created user:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<% end %>
-<%= render 'form' %>
 
-<%= link_to 'back to users', users_path %>
+<div class = "container text-center">
+  <div class = "row edit_user">
+      <div id = "error_msg">
+        <h3><%= pluralize(@user.errors.count, "error") if @user.errors.any? %></h3>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class = "edit_form">
+        <h3>edit your user</h3>
+        <%= form_with model: @user, local: true do |f| %>
+          <p>
+            <%= f.label :name, :class => 'form-inline' %>
+            <%= f.text_field :name, id: :user_name, :class => 'form-control' %>
+          </p>
+          <p>
+            <%= f.label :email, :class => 'form-inline' %>
+            <%= f.text_field :email, id: :user_email, :class => 'form-control' %>
+          </p>
+          <p>
+            <%= f.label :email_confirmation, :class => 'form-inline' %>
+            <%= f.text_field :email_confirmation, id: :user_email_confirmation, :class => 'form-control' %>
+          </p>
+          <p>
+            <%= f.file_field :image, :class => 'form-inline image-file' %>
+          </p>
+          <p>
+            <%= f.submit class: "btn btn-outline-info form-control submit" %>
+          </p>
+        <% end %>
+      </div>
+      <p class = "back-link">
+        <%= link_to 'Back to profile', current_user, :class => 'back' %>
+      </p>
+  </div>
+</div>

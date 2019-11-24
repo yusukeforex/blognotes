@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create, :index]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  before_action :require_admin, only: [:destroy]
+  # before_action :require_admin, only: [:destroy]
+  after_action :require_login, only: :new
+  before_action :login_prohibited, :only => [:new, :create]
+  
   def new 
     @user = User.new
   end
@@ -24,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update params.require(:user).permit(:name, :email, :email_confirmation, :image)
       flash[:success] = "Has been updated successfully"
-      redirect_to notes_path
+      redirect_to current_user
     else
       render 'edit'
     end
@@ -45,15 +48,20 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :email_confirmation, :password, :password_confirmation)
   end
   def require_same_user
-    if current_user != @user and !current_user.admin?
+    if current_user != current_user and !current_user.admin?
       flash[:danger] = "only edit or delete are allowed"
       redirect_to login_path
     end
   end
-  def require_admin
-    if logged_in? and !current_user.admin?
-      flash[:danger] = "you are not admin user"
-      redirect_to login_path
-    end
-  end
+
+
+  # def require_admin
+  #   if logged_in? and !current_user.admin?
+  #     flash[:danger] = "you are not admin user"
+  #     redirect_to login_path
+  #   end
+  # end
+  # def post_params
+  #   params.require(:post).permit(:image, :name, :email)
+  # end
 end

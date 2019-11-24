@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   #root
   root to:'users#index'
+
+
 end
