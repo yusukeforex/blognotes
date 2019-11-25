@@ -74,7 +74,7 @@ class NotesController < ApplicationController
 
     def require_same_user
       if current_user != @note.user and !current_user.admin?
-        flash[:danger] = "only edit or delete are allowed"
+        flash[:notice] = " You do not have access privileges to do this action"
         redirect_to signup_path
       end
     end

@@ -1,23 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @note.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @note.description %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @note.user.name %>
-</p>
-
-
-<% if logged_in? && (current_user == @note.user || current_user.admin?) %>
-  <%= link_to 'Edit', edit_note_path(@note) %>
-  <%= link_to 'Delete', note_path(@note), method: :delete, data: {confirm: "you want to delete this note?"} %>
-<% end %>
-  <%= link_to 'Back', notes_path %>
+<h3 class = "text-center show-title"><%= @note.title %></h3>
+<div class = "container-fluid note-show">
+  <div class = "row">
+    <div class = "col-sm-12">
+      <p>
+        <%= @note.description %>
+      </p>
+      <p>
+        <strong>Written by: </strong>
+        <%= @note.user.name %>
+      </p>
+      <div class = "row note-btn">
+      <% if logged_in? && (current_user == @note.user || current_user.admin?) %>
+        <%= link_to 'Edit', edit_note_path(@note), :class => 'btn btn-outline-info col-sm-3' %>
+        <%= link_to 'Delete', note_path(@note), method: :delete, data: {confirm: "You want to delete this note?"}, :class => 'btn btn-outline-danger col-sm-3' %>
+      <% end %>
+        <%= link_to 'Back', notes_path, :class => 'btn btn-outline-light col-sm-3' %>
+    </div>
+    </div>
+  </div>
+</div>

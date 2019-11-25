@@ -270,3 +270,22 @@ footer{
     padding: 10px 50px;
   }
 }
+
+// note show page show.html.erb notes
+.show-title{
+  margin-top: 40px;
+}
+.note-show{
+  display: block;
+  text-align: center;
+  width: 500px;
+  line-height: 250%;
+  margin-top: 40px;
+  .note-btn{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .btn{
+    margin: 20px;
+  }
+}
