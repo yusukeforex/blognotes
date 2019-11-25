@@ -1,6 +1,37 @@
-<h1>Editing Note</h1>
+<div id = "error_msg">
+  <h3><%= pluralize(@note.errors.count, "error") if @note.errors.any? %></h3>
+  <ul>
+    <% @note.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 
-<%= render 'form', note: @note %>
+<div class = "container text-center">
+  <div class = "note-edit row">
+    <div class = "form col-sm-12">
+      <h2>Edit note</h2>
+      <%= form_with(model: @note, local: true) do |f| %>
+        <p>
+          <%= f.label :title, :class => 'form-inline' %>
+          <%= f.text_field :title, id: :note_title, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.label :description, :class => 'form-inline' %>
+          <%= f.text_area :description, id: :note_description, :class => 'form-control' %>
+        </p>
+        <p>
+          <%= f.submit class: "btn btn-outline-info" %>
+        </p>
+      <% end %>
+      <p class = "show-back">
+        <%= link_to 'Note', @note, :class => 'show-btn' %> |
+        <%= link_to 'Back', notes_path, :class => 'show-btn' %>
+      </p>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', notes_path %>
+
+
+
