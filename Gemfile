@@ -20,6 +20,8 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'image_processing', '~> 1.2'
 gem 'font-awesome-sass'
+gem 'kaminari', '~> 0.17.0'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

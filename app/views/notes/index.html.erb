@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h3 class = "text-center all-notes-title">All Notes</h3>
+<hr class = all-notes-hr>
+<div class = "container-fluid">
+  <% @notes.each do |note| %>
+    <div class = "row">
+      <div class = "all-notes col-sm-12">
+        <ul>
+          <div class = "note-titile">
+            <li>Title: <%= link_to truncate(note.title, length: 100), note_path(note) %></li>
+          </div>
+          <div class = "note-body">
+            <li>Description: <%= truncate(note.description, length: 100) %></li>
+          </div>
+          <div class = "note-author">
+            <li>Author: <%= note.user.name %></li>
+          <div class = "note-actions">
+            <%= link_to "edit this note", edit_note_path(note), class: "btn btn-xs btn-outline-info" %>
+            <%= link_to "delete this note", note_path(note), method: :delete, data: {confirm: "are you sure you want to delete this note?"}, class: "btn btn-xs btn-outline-danger" %>
+          </div>
+        </ul>
+        <hr>
+      </div>
+    </div>
+  <% end %>
+    <%= paginate @notes, :class => 'pagination' %>
+  <div class = "row">
+    <div class = "new-note col-sm-12">
+      <%= link_to "New Note", new_note_path, :class => 'btn btn-outline-light new-btn' %>
+    </div>
+  </div>
+</div>
 
-<h1>Notes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.title %></td>
-        <td><%= note.description %></td>
-        <td><%= note.user.name if note.user %></td>
-        <td><%= link_to 'Show', note %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Note', new_note_path %>

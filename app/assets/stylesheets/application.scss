@@ -214,6 +214,59 @@ footer{
   }
 }
 
-
-
-
+//notes index page all notes
+.all-notes-title{
+  margin-top: 50px;
+}
+.all-notes-hr{
+  border-bottom: 1px solid #eaeaea9d;
+  width: 750px;
+  margin-top: 50px;
+}
+.note-title{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.note-body{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15 0;
+}
+.all-notes{
+  text-align: center;
+  display: block;
+  margin-top: 60px;
+  h3{
+    padding-bottom: 10px;
+  }
+  ul{
+    display: inline-block;
+    li{
+      text-align: left;
+      list-style: none;
+      padding: 10px 0;
+    }
+  }
+  hr{
+    border-bottom: 1px solid #eaeaea9d;
+    width: 750px;
+  }
+  .btn{
+    margin: 30px 80px;
+    padding: 10px 50px;
+  }
+}
+.pagination{
+  text-align: center;
+  display: block;
+  padding: 40px 0;
+}
+.new-note{
+  margin-bottom: 50px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  .new-btn{
+    padding: 10px 50px;
+  }
+}

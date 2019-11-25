@@ -3,8 +3,10 @@ class NotesController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /notes
   # GET /notes.json
+  PER = 5
+
   def index
-    @notes = Note.all
+    @notes = Note.page(params[:page]).per(PER)
   end
 
   # GET /notes/1
