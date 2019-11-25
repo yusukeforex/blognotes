@@ -13,6 +13,7 @@
           </div>
           <div class = "note-author">
             <li>Author: <%= note.user.name %></li>
+          </div>
           <div class = "note-actions">
             <%= link_to "edit this note", edit_note_path(note), class: "btn btn-xs btn-outline-info" %>
             <%= link_to "delete this note", note_path(note), method: :delete, data: {confirm: "are you sure you want to delete this note?"}, class: "btn btn-xs btn-outline-danger" %>
