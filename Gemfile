@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap'
 gem 'jquery-rails'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'font-awesome-sass'
 gem 'kaminari', '~> 0.17.0'
 
